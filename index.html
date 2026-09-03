@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoPlay - Todas las plataformas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #020813;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 102, 255, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: #00ff66;
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6), 0 0 20px rgba(0, 255, 102, 0.4);
+        }
+
+        .logo-icon {
+            color: #00ff66;
+            font-size: 1.6rem;
+        }
+
+        .btn-whatsapp {
+            background-color: #00ff66;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.7);
+        }
+
+        /* --- Main Content --- */
+        main {
+            text-align: center;
+            max-width: 1100px;
+            width: 100%;
+            margin: 40px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            color: #dcdcdc; /* Gris un poco más claro para que tome bien el neón */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(200, 200, 200, 0.3); /* Brillo neón gris/blanco */
+        }
+
+        h1 span {
+            color: #00ff66; /* Color verde neón para "un solo usuario" */
+            display: block;
+            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6), 0 0 20px rgba(0, 255, 102, 0.3);
+        }
+
+        .subtitle {
+            color: #00ff66;
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            text-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
+        }
+
+        /* --- Grid de Plataformas --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .grid-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 500px) {
+            .grid-container { grid-template-columns: repeat(1, 1fr); }
+        }
+
+        .card {
+            background: rgba(10, 18, 30, 0.6);
+            border: 1px solid rgba(0, 102, 255, 0.25);
+            border-radius: 16px;
+            padding: 25px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            border-color: #0066ff;
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .card-img-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .card-action {
+            font-size: 0.65rem;
+            color: #00ff66;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #666;
+            padding: 20px 0;
+        }
+
+        footer .logo-main {
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo-main">
+            <span class="logo-icon">✅</span> GamerPlay
+        </a>
+    </header>
+
+    <main>
+        <h1>Todas las plataformas <span>un solo usuario</span></h1>
+        <p class="subtitle">Con tu mismo usuario y clave seleccioná la plataforma que querás jugar.</p>
+
+        <div class="grid-container">
+            
+            <a href="https://ganamosbet.plus/home" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/GANAMOS.jpg" alt="Ganamos">
+                </div>
+                <div class="card-title">Ganamos</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://casinozeus1.plus/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/ZEUS.jpg" alt="CasinoZeus">
+                </div>
+                <div class="card-title">CasinoZeus</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://ganaencasabet.lat/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/GANA EN CASA.jpg" alt="Gana en Casa">
+                </div>
+                <div class="card-title">Gana en Casa</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://celuapuestas1.lat/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/CELU APUESTAS.jpg" alt="CeluApuestas">
+                </div>
+                <div class="card-title">CeluApuestas</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://celuapuestas1.lat/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/ORO PURO.jpg" alt="OroPuro Casino">
+                </div>
+                <div class="card-title">OroPuro Casino</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://bet30e.lat/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/BET 30.jpg" alt="Bet30">
+                </div>
+                <div class="card-title">Bet30</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://jugamos1.lat/login" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/JUGAMOS.jpg" alt="Jugamos">
+                </div>
+                <div class="card-title">Jugamos</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://casinozeta1.lat/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/CASINO ZETA.jpg" alt="CasinoZeta">
+                </div>
+                <div class="card-title">CasinoZeta</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://fortubet.cc/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/FORTU BET.jpg" alt="FortuBet">
+                </div>
+                <div class="card-title">FortuBet</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://granposeidon.plus/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/POSEIDON.jpg" alt="Gran Poseidón">
+                </div>
+                <div class="card-title">Gran Poseidón</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://megafaraon.plus/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/FARAON.jpg" alt="Mega Faraón">
+                </div>
+                <div class="card-title">Mega Faraón</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+            <a href="https://konabet.plus/" target="_blank" class="card">
+                <div class="card-img-wrapper">
+                    <img src="./pics/JONA BET.jpg" alt="KonaBet">
+                </div>
+                <div class="card-title">KonaBet</div>
+                <div class="card-action">JUGAR AHORA</div>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="logo-main">
+            <span class="logo-icon">✅</span> GamerPlay
+        </div>
+        <p>Jugá con responsabilidad. Solo para mayores de 18 años.</p>
+    </footer>
+
+</body>
+</html>
